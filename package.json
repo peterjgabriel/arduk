@@ -1,0 +1,41 @@
+{
+  "name": "new-callsign-website",
+  "version": "1.0.0",
+  "description": "Callsign's New look website built with Gulp workflow, bootstrap delivered through Bower",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@source.a2org.com:9999/~peter.gabriel_callsign.com/new-callsign-website.git"
+  },
+  "author": "Peter Gabriel",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-bower": "0.0.13",
+    "gulp-build": "^0.5.3",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-save": "^1.3.0",
+    "gulp-sitemap": "^5.0.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "bower": "^1.8.2",
+    "node-sass": "^4.7.2"
+  }
+}

@@ -1,0 +1,11 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+$font-family-base: 'Lato', sans-serif;
+
+
+// Layout Styles - Cards, Boxes, Featured Areas, Sections etc
+@import "parts/layout";
+
+@import "parts/ard";
