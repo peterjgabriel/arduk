@@ -3743,6 +3743,9 @@ a:hover, a:active, a:focus {
   margin-top: 25px;
   margin-bottom: 25px; }
 
+.top-p-number {
+  padding-top: 45px; }
+
 .mh {
   box-shadow: 0px 0px 0px 15px #fff;
   border: 8px double #fff; }
@@ -4257,7 +4260,7 @@ textarea.form-item {
 .title-group .line-default:after {
   left: 50%;
   margin-left: -35px;
-  border-color: #fff; }
+  border-color: #0C5693; }
 
 .title-group h1, .title-group h2, .title-group h3, .title-group h4, .title-group h5, .title-group h6 {
   padding-top: 0px; }
