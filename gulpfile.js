@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
@@ -11,6 +10,7 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
+var deploy      = require('gulp-gh-pages');
 
 
 // Development Tasks
@@ -70,18 +70,6 @@ gulp.task('img', function() {
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
     .pipe(gulp.dest('dist/fonts'))
-})
-
-
-// Clean up
-gulp.task('clean', function() {
-  return del.sync('dist').then(function(cb) {
-    return cache.clearAll(cb);
-  });
-})
-
-gulp.task('clean:dist', function() {
-  return del.sync(['dist/**/*', '!dist/img', '!dist/img/**/*']);
 });
 
 // Build
@@ -91,11 +79,18 @@ gulp.task('default', function(callback) {
   runSequence(['sass', 'browserSync'], 'watch',
     callback
   )
-})
+});
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
 
 gulp.task('build', function(callback) {
   runSequence(
-    'clean:dist',
     'sass',
     ['useref', 'img', 'fonts'],
     callback
