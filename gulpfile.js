@@ -53,7 +53,7 @@ gulp.task('useref', function() {
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 });
 
 // Optimizing Images
@@ -63,13 +63,13 @@ gulp.task('img', function() {
     .pipe(cache(imagemin({
       interlaced: true,
     })))
-    .pipe(gulp.dest('dist/img'))
+    .pipe(gulp.dest('docs/img'))
 });
 
 // Copying fonts
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('docs/fonts'))
 });
 
 // Build
@@ -85,7 +85,7 @@ gulp.task('default', function(callback) {
  * Push build to gh-pages
  */
 gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
+  return gulp.src("./docs/**/*")
     .pipe(deploy())
 });
 
